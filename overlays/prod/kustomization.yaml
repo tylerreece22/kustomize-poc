@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+
+patches:
+  - path: custom-env.yaml
+  - path: replica-and-rollout-strategy.yaml
+  - path: database-secret.yaml
+
+# Result of running `kustomize edit add secret`
+secretGenerator:
+- literals:
+  - db-password=12345
+  name: sl-demo-app
+  type: Opaque
+
+# Result of running `kustomize edit set image`
+images:
+  - name: foo/bar
+    newName: foo/bar
+    newTag: 3.4.5

@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sl-demo-app
+spec: # shows error incorrectly because this will just add added to base file during yaml build
+  template:
+    spec:
+      containers:
+        - name: app # important to add the name so this change correctly maps to
+          env:
+            - name: CUSTOM_ENV_VARIABLE
+              value: Value defined by Kustomize ❤️
