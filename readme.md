@@ -2,12 +2,15 @@
 This repo provides a good starting point for using Kustomize and an overview of basic usage but does not cover more advanced usage.
 
 ### Why Kustomize?
-Kustomize has been a native `kind` in k8s since 2017. It will work in k8s and any PaaS option which uses k8s for container orchestration without constraining you to a specific platform.
+Kustomize has been a native Kubernetes object since 2017. It will work in k8s and any PaaS option which uses k8s for container orchestration without constraining you to a specific platform.
+
+### Why not Kustomize?
+TBD
 
 ## Getting started
 - [Install Kustomize CLI](https://kubectl.docs.kubernetes.io/installation/kustomize/). That's it!
 
-## Usage walkthrough
+## Walkthrough
 ### Base folder 
 This folder contains the base yaml which will be overwritten based on environment and Kustomize yaml.
 
@@ -26,6 +29,10 @@ Like for secret, there is a custom directive to allow changing of image or tag d
 
 `kustomize edit set image foo/bar=foo/bar:$TAG_VERSION`
 
-references:
+## Usage
+- `kustomize build overlays/prod > generated.yaml`
+- `kubectl apply -f generated.yaml`
+
+### References:
 - https://blog.stack-labs.com/code/kustomize-101/
 - https://gitlab.com/davinkevin/kustomize-blog-demo
