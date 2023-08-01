@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sl-demo-app
+  name: kustomize-demo-app
 spec: # shows error incorrectly because this will just add added to base file during yaml build
   template:
     spec:

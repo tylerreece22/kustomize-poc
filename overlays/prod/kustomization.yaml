@@ -14,7 +14,7 @@ patches:
 #secretGenerator:
 #- literals:
 #  - db-password=12345
-#  name: sl-demo-app
+#  name: kustomize-demo-app
 #  type: Opaque
 
 # Result of running `kustomize edit set image`

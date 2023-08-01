@@ -17,7 +17,7 @@ This folder contains a directory per environment which will be used to overwrite
 ### Defining secrets without committing them to git
 Kustomize has an inline option to define secrets:
 
-`kustomize edit add secret sl-demo-app --from-literal=db-password=12345`
+`kustomize edit add secret kustomize-demo-app --from-literal=db-password=12345`
 
 Note: You can also use a secret from a properties file with `--from-file=file/path` or from env file with `--from-env-file=env/path.env`
 

@@ -1,24 +1,24 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sl-demo-app
+  name: kustomize-demo-app
 spec:
   ports:
   - name: http
     port: 8080
     targetPort: 8080
   selector:
-    app: sl-demo-app
+    app: kustomize-demo-app
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sl-demo-app
+  name: kustomize-demo-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sl-demo-app
+      app: kustomize-demo-app
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -27,7 +27,7 @@ spec:
   template:
     metadata:
       labels:
-        app: sl-demo-app
+        app: kustomize-demo-app
     spec:
       containers:
       - env:
