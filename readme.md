@@ -22,7 +22,7 @@ Kustomize has an inline option to define secrets:
 
 `kustomize edit add secret kustomize-demo-app --from-literal=db-password=12345`
 
-Note: You can also use a secret from a properties file with `--from-file=file/path` or from env file with `--from-env-file=env/path.env`
+*Note: You can also use a secret from a properties file with `--from-file=file/path` or from env file with `--from-env-file=env/path.env`*
 
 ### Change image inline
 Like for secret, there is a custom directive to allow changing of image or tag directly from the command line. This is very useful if you need to deploy the image previously tagged by your continuous build system.
@@ -30,8 +30,8 @@ Like for secret, there is a custom directive to allow changing of image or tag d
 `kustomize edit set image foo/bar=foo/bar:$TAG_VERSION`
 
 ## Usage
-- `kustomize build overlays/prod > generated.yaml`
-- `kubectl apply -f generated.yaml`
+1. `kustomize build overlays/prod > generated.yaml`
+2. `kubectl apply -f generated.yaml`
 
 ### References:
 - https://blog.stack-labs.com/code/kustomize-101/
